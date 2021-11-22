@@ -38,6 +38,18 @@ cp .env.example .env
 # generate application key
 php artisan key:generate
 
+# open .env file
+Replace QUEUE_CONNECTION=sync with QUEUE_CONNECTION=database
+
+# config mysql
+Replace mysql details on .env file
+
+# queue table
+php artisan queue:table
+
+# clear cache
+php artisan config:cache
+
 # run migration
 php artisan migrate
 
@@ -46,6 +58,10 @@ npm install
 
 # compile assets
 npm run dev || npm run watch
+
+# Send emails
+
+php artisan queue:listen
 
 # run in development mode
 php artisan serve  #localhost:8000
